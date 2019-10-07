@@ -83,7 +83,34 @@ function div($arg1, $arg2){
         echo "Частное от деления чисел $arg1 и $arg2 = " . ($arg1 / $arg2) . "</br>";
     }
 }
-summ (2,4);
-diff(4,7);
-multi(5,6);
-div(8,0);
+summ ($a,$b);
+diff($a,$b);
+multi($a,$b);
+div($a,$b);
+
+/*Задание №4. Реализовать функцию с тремя параметрами: function mathOperation($arg1, $arg2, $operation),
+где $arg1, $arg2 – значения аргументов, $operation – строка с названием операции.
+В зависимости от переданного значения операции выполнить одну из арифметических операций
+(использовать функции из пункта 3) и вернуть полученное значение (использовать switch).*/
+echo "</br>Задание№4</br>";
+
+function mathOperation($arg1, $arg2, $operation=array("summ","diff","multi","div")){
+    switch ($operation){
+        case "summ":
+            summ ($arg1,$arg2);
+            break;
+        case "diff":
+            diff($arg1,$arg2);
+            break;
+        case "multi":
+            multi($arg1,$arg2);
+            break;
+        case "div":
+            div($arg1,$arg2);
+            break;
+        default:
+            echo "Неверно указано название применяемой функции в качестве третьего аргумента. Доступны только \"summ\", \"diff\", \"multi\" и \"div\"";
+    }
+}
+
+mathOperation($a,$b, "diff");
