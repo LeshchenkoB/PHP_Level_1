@@ -114,3 +114,15 @@ function mathOperation($arg1, $arg2, $operation=array("summ","diff","multi","div
 }
 
 mathOperation($a,$b, "diff");
+
+/* Задание№6. *С помощью рекурсии организовать функцию возведения числа в степень.
+Формат: function power($val, $pow), где $val – заданное число, $pow – степень.*/
+echo "</br>Задание№6</br>";
+
+function power($val, $pow){
+    if ($pow<=1){
+        return $val;
+    }
+    return $val * power($val, $pow-1);
+}
+echo power(2,3);
