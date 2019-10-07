@@ -126,3 +126,43 @@ function power($val, $pow){
     return $val * power($val, $pow-1);
 }
 echo power(2,3);
+
+/* Задание№7. *Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями, например:
+22 часа 15 минут
+21 час 43 минуты*/
+echo "</br></br>Задание№7</br>";
+
+$today = getdate();
+function timeNow($h, $m, $hours1, $hours2, $hours3, $min1, $min2, $min3){
+    /**$hours1 = час
+     * $hours2 = часа
+     * $hours3 = часов
+     * $min1 = минута
+     * $min2 = минуты
+     * $min3 = минут
+     */
+
+    switch ($h){
+        case 0 || ($h >=5 && $h <=20):
+            $h = $h . " " . $hours3;
+            break;
+        case ($h == 1) || ($h == 21):
+            $h = $h . " " . $hours1;
+            break;
+        default:
+            $h = $h . " " . $hours2;
+    }
+    switch ($m){
+        case 0 || ($m >=5 && $m <=20) || ($m >=25 && $m <=30) || ($m >=35 && $m <=40) || ($m >=55):
+            $m = $m . " " . $min3;
+            break;
+        case ($m == 1) || ($m == 21) || ($m == 31) || ($m == 41) || ($m == 51):
+            $m = $m . " " . $min1;
+            break;
+        default:
+            $m = $m . " " . $min2;
+    }
+    echo "Текущее время $h $m";
+}
+
+timeNow($today["hours"], $today["minutes"], "час", "часа", "часов", "минута", "минуты", "минут");
