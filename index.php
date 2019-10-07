@@ -62,3 +62,28 @@ switch ($a){
     case 15:
         echo "15";
 }
+
+/*Задание№3. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
+echo "</br></br>Задание№3</br>";
+
+function summ($arg1, $arg2){
+    echo "Сумма чисел $arg1 и $arg2 = " . ($arg1+$arg2) . "</br>";
+}
+function diff($arg1, $arg2){
+    echo "Разность чисел $arg1 и $arg2 = " . ($arg1-$arg2) . "</br>";
+}
+function multi($arg1, $arg2){
+    echo "Произведение чисел $arg1 и $arg2 = " . ($arg1*$arg2) . "</br>";
+}
+function div($arg1, $arg2){
+    if ($arg2==0) {
+        echo "На ноль делить нельзя";
+    }
+    else{
+        echo "Частное от деления чисел $arg1 и $arg2 = " . ($arg1 / $arg2) . "</br>";
+    }
+}
+summ (2,4);
+diff(4,7);
+multi(5,6);
+div(8,0);
