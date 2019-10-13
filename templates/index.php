@@ -36,10 +36,11 @@
             </div>
         </div>
 
-        <div class="col-sm-4"><form>
+        <div class="col-sm-4">
+            <form action="../engine/server.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Форма загрузки изображений</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1"><br>
+                    <input type="file" name="photo" multiple class="form-control-file" id="exampleFormControlFile1"><br>
                     <input type="submit">
                 </div>
             </form>
