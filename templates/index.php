@@ -18,21 +18,12 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <div class="col-sm-4">
-                    <a class="link" href="#"><img class="link-img" src="../public/img/small/posts-1.png" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a class="link" href="#"><img class="link-img" src="../public/img/small/posts-1.png" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a class="link" href="#"><img class="link-img" src="../public/img/small/posts-1.png" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a class="link" href="#"><img class="link-img" src="../public/img/small/posts-1.png" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                </div>
-                <div class="col-sm-4">
-                    <a class="link" href="#"><img class="link-img" src="../public/img/small/posts-1.png" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
-                </div>
+                <?php require "../engine/dir.php"?>
+                <?php foreach ($dir as $item):?>
+                    <div class="col-sm-4">
+                        <a class="link" href="#"><img class="link-img" src="../public/img/small/<?= $item?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
+                    </div>
+                <?php endforeach;?>
             </div>
         </div>
 
@@ -61,10 +52,10 @@
                 </div>
             </div>
         </div>
+
         <!-- Modal end-->
     </div>
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
