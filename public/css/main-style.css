@@ -1,0 +1,31 @@
+
+.modal-content{
+    width: auto;
+}
+
+.modal-body{
+    text-align: center;
+}
+form{
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+}
+.header{
+    padding-top: 30px;
+}
+.link{
+    display: block;
+    margin: 0 0 30px 0;
+    transition: box-shadow 0.4s;
+}
+.link:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.link-img{
+    width: 100%;
+}
