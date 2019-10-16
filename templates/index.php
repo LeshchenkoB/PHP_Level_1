@@ -1,3 +1,5 @@
+<?php require "../engine/dir.php"?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,15 +20,13 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <?php require "../engine/dir.php"?>
                 <?php foreach ($dir as $item):?>
                     <div class="col-sm-4">
-                        <a class="link" href="#"><img class="link-img" src="../public/img/small/<?= $item?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
+                        <a class="link" href="#"><img class="link-img" src="<?=$directory.$item?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
                     </div>
                 <?php endforeach;?>
             </div>
         </div>
-
         <div class="col-sm-4">
             <form action="../engine/server.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -47,7 +47,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="../public/img/small/posts-1.png" alt="photo">
+                        <img src="<?=$directory.$item?>" alt="photo">
                     </div>
                 </div>
             </div>
