@@ -21,6 +21,7 @@
         <div class="col-sm-8">
             <div class="row">
                 <?php foreach ($dir as $item):?>
+                
                     <div class="col-sm-4">
                         <a class="link" href="#"><img class="link-img" src="<?=$directory.$item?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
                     </div>
