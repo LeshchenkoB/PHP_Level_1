@@ -11,12 +11,16 @@ function sqlQueryIntoImg($path_big, $path_small,$connect){ // функция с�
 if (in_array($_FILES['photo']['type'], array("image/png", "image/jpeg","image/pjpeg"))){ // если загружаемый файл картинка
     $path_big = $directoryBig_db.$_FILES['photo']['name']; // создаем путь, для больших картинок
     $path_small = $directorySmall_db.$_FILES['photo']['name']; // создаем путь, для малельних картинкок
-    $pathPhoto_big = $directoryBig.$_FILES['photo']['name']; // путь для складирования загружаемых файлов
+    $pathPhoto_big = $directoryBig.$_FILES['photo']['name']; // путь для складирования загружаемых больших файлов
+    $pathPhoto_small = $directorySmall.$_FILES['photo']['name']; // путь для складирования загружаемых маленьких файлов
 
-    sqlQueryIntoImg($path_big, $path_small, $connect);
+    sqlQueryIntoImg($path_big, $path_small, $connect); // отправляем запрос к БД и записываем в нее путь к картинкам
 
-    if (move_uploaded_file($_FILES['photo']['tmp_name'],$pathPhoto_big)){ // перемещаем загруженный файл в новое место
-        echo "Файл ".$_FILES['photo']['name']." успешно загружен! </br></br>";
+    if (copy($_FILES['photo']['tmp_name'],$pathPhoto_big)){ // копируем загруженный файл в новое место
+        echo "Файл ".$_FILES['photo']['name']." (большой) успешно загружен! </br></br>";
+    }
+    if (move_uploaded_file($_FILES['photo']['tmp_name'],$pathPhoto_small)){ // перемещаем загруженный файл в новое место
+        echo "Файл ".$_FILES['photo']['name']." (маленький) успешно загружен! </br></br>";
     }
 }
 else echo "Файл ".$_FILES['photo']['name']." не является картинкой! </br></br>";
