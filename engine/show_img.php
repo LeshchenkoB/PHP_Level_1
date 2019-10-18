@@ -1,5 +1,4 @@
 <?php
-require "../engine/dir.php";
 require "../config/config.php";
 
 $sql = "select * from img"; // команда для SQL
