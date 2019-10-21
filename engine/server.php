@@ -11,8 +11,8 @@ function imageResize($pathOldPhoto, $pathNewPhoto){ // функция умень
 //    $uploadedfile = $_FILES['photo']['tmp_name']; // путь и имя файла, которое будем обрезать
     $uploadedfile = $pathOldPhoto; // путь и имя файла, которое будем обрезать
     $src=imagecreatefromjpeg($uploadedfile); // открываем исходное изображение
-    if(!src) $src=imagecreatefrompng($uploadedfile); // если не удалось открыть файл jpeg, открываем исходное изображение png
-    if(!src) $src=imagecreatefromgif($uploadedfile); // если не удалось открыть файл png открываем исходное изображение gif
+    if(!$src) $src=imagecreatefrompng($uploadedfile); // если не удалось открыть файл jpeg, открываем исходное изображение png
+    if(!$src) $src=imagecreatefromgif($uploadedfile); // если не удалось открыть файл png открываем исходное изображение gif
     $size = getimagesize($uploadedfile); // вернем размер файла в пикселях
     $widht = $size[0]; // запишем разрмеры ширины исходной картинки 1024
     $height = $size[1]; // запишем размеры высоты исходной картинки 642
