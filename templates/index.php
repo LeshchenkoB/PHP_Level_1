@@ -1,5 +1,5 @@
-<?php require "../engine/dir.php"?>
-<?php require "../engine/show_img.php"?>
+<?php require "..".DIRECTORY_SEPARATOR."engine".DIRECTORY_SEPARATOR."dir.php"?>
+<?php require "..".DIRECTORY_SEPARATOR."engine".DIRECTORY_SEPARATOR."show_img.php"?>
 
 <!doctype html>
 <html lang="en">
