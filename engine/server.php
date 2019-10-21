@@ -7,8 +7,9 @@ function sqlQueryIntoImg($path_big, $path_small,$connect){ // функция с�
     mysqli_query($connect, $sql); // отправляем запрос к БД
 }
 
-function imageResize(){
-    $uploadedfile = $_FILES['photo']['tmp_name']; // имя файла
+function imageResize($pathOldPhoto, $pathNewPhoto){
+//    $uploadedfile = $_FILES['photo']['tmp_name']; // путь и имя файла, которое будем обрезать
+    $uploadedfile = $pathOldPhoto; // путь и имя файла, которое будем обрезать
     $src=imagecreatefromjpeg($uploadedfile); // открываем исходное изображение
     $size = getimagesize($uploadedfile); // вернем размер файла в пикселях
     $widht = $size[0]; // запишем разрмеры ширины исходной картинки 1024
@@ -17,7 +18,8 @@ function imageResize(){
     $new_w=$widht/$k; // новая ширина
     $new_h=$height/$k;// новая высота
     $tmp = imagecreatetruecolor($new_w,$new_h); // создаем новое изображение с новыми размерами
-    $filename = 'path/to/image/' . $_FILES['photo']['name']; //путь и имя файл нового изображения
+//    $filename = 'path/to/image/' . $_FILES['photo']['name']; //путь и имя файл нового изображения
+    $filename = $pathNewPhoto; //путь и имя файл нового изображения
     imagecopyresampled($tmp, $src, 0, 0, 0, 0,$new_w,$new_h,$widht, $height); // копируем большую картинку в новую со сжатием
     imagejpeg($tmp, $filename,100); // сохраняем уменьшеное изображение на диск
 }
@@ -31,10 +33,9 @@ if (in_array($_FILES['photo']['type'], array("image/png", "image/jpeg","image/pj
 
     sqlQueryIntoImg($path_big, $path_small, $connect); // отправляем запрос к БД и записываем в нее путь к картинкам
 
-    if (copy($_FILES['photo']['tmp_name'],$pathPhoto_big)){ // копируем загруженный файл в новое место
+    if (move_uploaded_file($_FILES['photo']['tmp_name'],$pathPhoto_big)){ // копируем загруженный файл в новое место
         echo "Файл ".$_FILES['photo']['name']." (большой) успешно загружен! </br></br>";
-    }
-    if (move_uploaded_file($_FILES['photo']['tmp_name'],$pathPhoto_small)){ // перемещаем загруженный файл в новое место
+        imageResize($pathPhoto_big, $pathPhoto_small); // функция перезапими большой картики в маленькую
         echo "Файл ".$_FILES['photo']['name']." (маленький) успешно загружен! </br></br>";
     }
 }
