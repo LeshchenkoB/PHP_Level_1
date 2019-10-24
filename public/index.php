@@ -26,7 +26,7 @@
                     <div class="col-sm-4 item">
                         <h4 class="item-caption"><?=$data['caption'] . " " . $data['id']?></h4>
 <!--                        <a class="link" href="--><?//=$directory.$data['src_big']."?id=".$data['id']?><!--" target="_blank"><img class="link-img" src="--><?//=$directory.$data['src_small']?><!--" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>-->
-                        <a class="link" href="../template/item.php<?="?id=".$data['id']?>" target="_blank"><img class="link-img" src="<?=$directory.$data['src_small']?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
+                        <a class="link" href="../template/item.php<?="?id=".$data['id']?>"><img class="link-img" src="<?=$directory.$data['src_small']?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
                         <span class="count-view">Количество просмотров: <?=$data['count-view']?></span>
                     </div>
                 <?php endwhile;?>
