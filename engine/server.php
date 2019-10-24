@@ -44,4 +44,4 @@ if (in_array($_FILES['photo']['type'], array("image/png", "image/jpeg","image/pj
 else echo "Файл ".$_FILES['photo']['name']." не является картинкой! </br></br>";
 
 ?>
-<a href="../templates/index.php">Вернуться в галерею</a>
+<a href="../public/index.php">Вернуться в галерею</a>
