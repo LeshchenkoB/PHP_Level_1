@@ -24,7 +24,7 @@
             <div class="row">
                 <?php while ($data = mysqli_fetch_assoc($res)):?>
                     <div class="col-sm-4 item">
-                        <h3 class="item-caption">Название</h3>
+                        <h4 class="item-caption"><?=$data['caption'] . " " . $data['id']?></h4>
                         <a class="link" href="<?=$directory.$data['src_big']?>" target="_blank"><img class="link-img" src="<?=$directory.$data['src_small']?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
                         <span class="count-view">Количество просмотров: <?=$data['count-view']?></span>
                     </div>
