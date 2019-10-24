@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main-style.css">
-    <title>Lesson №5</title>
+    <title>Lesson №6</title>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>ДЗ к уроку №5 по PHP_level_1. (загружаемая галерея из БД)</h1>
+        <h1>ДЗ к уроку №6 по PHP_level_1. (загружаемая галерея из БД)</h1>
     </div>
     <div class="row">
         <div class="col-sm-8">
