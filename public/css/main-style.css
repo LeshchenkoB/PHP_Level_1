@@ -18,8 +18,11 @@ form{
 }
 .link{
     display: block;
-    margin: 0 0 30px 0;
     transition: box-shadow 0.4s;
+}
+.count-view{
+    display: block;
+    margin: 0 0 30px 0;
 }
 .link:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -27,4 +30,7 @@ form{
 
 .link-img{
     width: 100%;
+}
+.comment{
+    margin: 30px 0 0 0;
 }
