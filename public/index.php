@@ -1,5 +1,6 @@
 <?php require ".." . DIRECTORY_SEPARATOR . "engine" . DIRECTORY_SEPARATOR . "dir.php" ?>
 <?php require ".." . DIRECTORY_SEPARATOR . "engine" . DIRECTORY_SEPARATOR . "show_img.php" ?>
+<?php require ".." . DIRECTORY_SEPARATOR . "engine" . DIRECTORY_SEPARATOR . "show.comments.php" ?>
 
 <!doctype html>
 <html lang="en">
@@ -49,8 +50,6 @@
             </form>
             <div class="comment">
                 <p>Отзывы:</p>
-                <?$sql = "SELECT * FROM comments ORDER BY id DESC";?>
-			    <?$commentsIn_bd = mysqli_query($connect, $sql);?>
                 <?$i=1;?>
                 <?while($data=mysqli_fetch_assoc($commentsIn_bd)):?>
                     <span><?=$i . ". " . $data['comment'] ?><span><br><br>

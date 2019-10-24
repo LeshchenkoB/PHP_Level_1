@@ -11,9 +11,11 @@ if ($resComments){
 }
 else echo ("Отзыв не отправлен, пропробуйте снова!<br>");
 
-$sql = "SELECT * FROM comments";
-$commentsIn_bd = mysqli_query($connect, $sql); // отправляем запрос к БД, чтобы получить все комментарии
+//$sql = "SELECT * FROM comments";
+//$commentsIn_bd = mysqli_query($connect, $sql); // отправляем запрос к БД, чтобы получить все комментарии
 
+//$sql = "SELECT * FROM comments ORDER BY id DESC";
+//$commentsIn_bd = mysqli_query($connect, $sql);
 ?>
 
 <a href="../public/index.php">Вернуться на главную страницу</a>
