@@ -37,24 +37,27 @@
                 </div>
             </form>
         </div>
-        <!-- Modal -->
-<!--        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
-<!--            <div class="modal-dialog modal-dialog-centered" role="document">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>-->
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                            <span aria-hidden="true">&times;</span>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <img class="img-modal" src="" alt="photo" width="100%">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <!-- Modal end-->
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form action="../engine/comments.php" method="post">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Оставьте свой отзыв:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3" placeholder="ваш текст"></textarea><br>
+                    <p><input type="submit" value="Отправить отзыв"></p>
+                </div>
+            </form>
+            <div class="comment">
+                <p>Отзывы:</p>
+                <?$sql = "SELECT * FROM comments ORDER BY id DESC";?>
+			    <?$commentsIn_bd = mysqli_query($connect, $sql);?>
+                <?$i=1;?>
+                <?while($data=mysqli_fetch_assoc($commentsIn_bd)):?>
+                    <span><?=$i . ". " . $data['comment'] ?><span><br><br>
+                    <?$i++?>
+			    <?endwhile?>
+            </div>
+        </div>
     </div>
 </div>
 
