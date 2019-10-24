@@ -1,4 +1,5 @@
-<?php require "../engine/dir.php"?>
+<?php require "..".DIRECTORY_SEPARATOR."engine".DIRECTORY_SEPARATOR."dir.php"?>
+<?php require "..".DIRECTORY_SEPARATOR."engine".DIRECTORY_SEPARATOR."show_img.php"?>
 
 <!doctype html>
 <html lang="en">
@@ -10,21 +11,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/main-style.css">
-    <title>Lesson №4</title>
+    <title>Lesson №5</title>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>ДЗ к уроку №4 по PHP_level_1. (загружаемая галерея)</h1>
+        <h1>ДЗ к уроку №5 по PHP_level_1. (загружаемая галерея из БД)</h1>
     </div>
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <?php foreach ($dir as $item):?>
+                <?php while ($data = mysqli_fetch_assoc($res)):?>
                     <div class="col-sm-4">
-                        <a class="link" href="#"><img class="link-img" src="<?=$directory.$item?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
+                        <a class="link" href="<?=$directory.$data['src_big']?>" target="_blank"><img class="link-img" src="<?=$directory.$data['src_small']?>" alt="photo" data-toggle="modal" data-target="#exampleModalCenter"></a>
                     </div>
-                <?php endforeach;?>
+                <?php endwhile;?>
             </div>
         </div>
         <div class="col-sm-4">
@@ -37,21 +38,21 @@
             </form>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="<?=$directory.$item?>" alt="photo">
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+<!--            <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>-->
+<!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                            <span aria-hidden="true">&times;</span>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <img class="img-modal" src="" alt="photo" width="100%">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- Modal end-->
     </div>
