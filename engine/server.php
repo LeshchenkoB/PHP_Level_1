@@ -3,7 +3,7 @@ require "dir.php";
 require "..".DIRECTORY_SEPARATOR."config".DIRECTORY_SEPARATOR."config.php";
 
 function sqlQueryIntoImg($path_big, $path_small,$connect){ // функция создает запрос к БД (table = img) и отправляет его
-    $sql = "insert into img(src_big, src_small) values ('$path_big', '$path_small')"; // команда для SQL для добавления данных о путях к папке
+    $sql = "INSERT INTO img(src_big, src_small) VALUES ('$path_big', '$path_small')"; // команда для SQL для добавления данных о путях к папке
     mysqli_query($connect, $sql); // отправляем запрос к БД
 }
 

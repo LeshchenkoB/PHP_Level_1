@@ -1,5 +1,5 @@
 <?php
- print_r($_GET);
+require "..".DIRECTORY_SEPARATOR."engine".DIRECTORY_SEPARATOR."count_view.php";
 
 ?>
 
